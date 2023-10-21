@@ -1,0 +1,143 @@
+:root{
+  --primary-cyan: hsl(179, 62%, 43%);  
+  --primary-yellow: hsl(71, 73%, 54%);  
+  --neutral-gray: hsl(204, 43%, 93%);  
+  --neutral-blue: hsl(218, 22%, 67%);
+  --basic-white: white;  
+}
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Karla', sans-serif;
+    font-size: 16px;
+    background-color: var(--neutral-gray);
+}
+main{
+    width: 700px;
+    max-width: 700px;
+    margin: 10vh auto;
+}
+#grid > .single-price-grid{
+    display: grid;
+    grid-template-areas: 
+    'join join'
+    'price why';
+}
+.card1{
+    grid-area: join;
+    background-color: var(--basic-white);
+    border-radius: 8px 8px 0 0;
+}
+.card2{
+    grid-area: price;
+    background-color: var(--primary-cyan);
+    border-radius: 0 0 0 8px;
+}
+.card3{
+    grid-area: why;
+    background-color: hsla(179, 62%, 43%,0.75);
+    border-radius: 0 0 8px 0;
+}
+.card2, .card3{
+    color: var(--basic-white);
+    width: 350px;
+}
+.card1, .card2, .card3{
+    padding: 35px;
+}
+p{
+    margin-top: 30px;
+    line-height: 25px;
+}
+h1, h2{
+    margin-top: 0;
+}
+h1{
+    color: var(--primary-cyan);
+}
+h2.join-subtitle{
+    color: var(--primary-yellow);
+}
+h2{
+    font-size: 1.3rem;
+}
+button{
+    width: 100%;
+    height: 50px;
+    background-color: var(--primary-yellow);
+    border-radius: 5px;
+    color: var(--basic-white);
+    border: none;
+    box-shadow: 1px 1px 20px 1px rgba(0, 0, 0, 0.3);
+    font-weight: 500;
+    margin-top: 20px;
+}
+button:hover{
+    border: 2px solid var(--basic-white);
+    background-color: transparent;
+    cursor: pointer;
+    color: var(--basic-white);
+    box-shadow: none;
+}
+span{
+    font-weight: 700;
+    font-size: 2.3rem;
+}
+
+
+
+.attribution { 
+    font-size: 11px; text-align: center; 
+}
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
+
+@media screen and (max-width: 900px) {
+    main{
+        width: auto;
+        max-width: 350px;
+        height: 900px;
+    }
+    #grid > .single-price-grid{
+        display: grid;
+        grid-template-areas: 
+        'join join'
+        'price price'
+        'why why';
+    }
+    .card1{
+        border-radius: 8px 8px 0 0;
+        }
+    .card2{
+        border-radius: 0;
+        }
+    .card2 > p{
+        margin-top: -15px;
+        }
+    .card3{
+        border-radius: 0 0 8px 8px;
+        }
+    .card3 > p{
+        line-break: strict;
+        max-width: 250px;
+    }
+        h1{
+            font-size: 1.5rem;
+        }
+        h2{
+            font-size: 1.2rem;
+        }
+        h3{
+            font-weight: 100;
+        }
+        p{
+            margin-top: 10px;
+        }
+        .card1, .card2, .card3{
+            padding: 25px;
+        }
+}
